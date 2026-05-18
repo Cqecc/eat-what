@@ -1,0 +1,44 @@
+<view class="overlay" bindtap="onClose">
+  <view class="edit-modal card" catchtap="">
+    <view class="modal-title">编辑记录</view>
+
+    <view class="modal-row">
+      <input class="modal-input" placeholder="菜名" value="{{name}}" bindinput="onNameInput" />
+    </view>
+
+    <view class="modal-row modal-row-group">
+      <text class="modal-label">餐次</text>
+      <view class="modal-options">
+        <view wx:for="{{meals}}" wx:key="*this" class="option-btn {{meal === item ? 'active' : ''}}" bindtap="onMealTap" data-value="{{item}}">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="modal-row modal-row-group">
+      <text class="modal-label">分类</text>
+      <view class="modal-options">
+        <view wx:for="{{categories}}" wx:key="*this" class="option-btn {{category === item ? 'active' : ''}}" bindtap="onCategoryTap" data-value="{{item}}">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="modal-row modal-row-group">
+      <text class="modal-label">评价</text>
+      <view class="modal-options">
+        <view wx:for="{{ratings}}" wx:key="*this" class="option-btn {{rating === item ? 'active' : ''}}" bindtap="onRatingTap" data-value="{{item}}">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="modal-row">
+      <input class="modal-input" placeholder="备注（可选）" value="{{note}}" bindinput="onNoteInput" />
+    </view>
+
+    <view class="modal-actions">
+      <view class="btn-secondary" bindtap="onClose">取消</view>
+      <view class="btn-primary modal-btn-save" bindtap="onSave">保存</view>
+    </view>
+
+    <view class="modal-danger-actions">
+      <view class="btn-danger" bindtap="onExclude">{{excluded ? '恢复推荐' : '不想再推荐'}}</view>
+      <view class="btn-danger-outline" bindtap="onDelete">删除</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+.record-item {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.item-meta {
+  margin-top: 4px;
+}
+
+.meta-text {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.item-note {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-top: 6px;
+}
+
+.item-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.item-excluded-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 11px;
+  color: var(--color-danger);
+  background-color: #ffebee;
+  padding: 2px 8px;
+  border-radius: 10px;
+}

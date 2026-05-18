@@ -1,0 +1,20 @@
+<view class="overlay" bindtap="onClose">
+  <view class="cart-panel" catchtap="">
+    <view class="panel-title">购物车</view>
+
+    <view wx:if="{{cartItems.length === 0}}" class="cart-empty">购物车为空</view>
+
+    <view wx:else class="cart-list">
+      <view wx:for="{{cartItems}}" wx:key="_id" class="cart-item">
+        <text class="cart-item-name">{{item.name}}</text>
+        <text class="cart-item-meta">{{item.meal}} · {{item.category}}</text>
+        <view class="cart-item-remove" bindtap="onRemove" data-id="{{item._id}}">删除</view>
+      </view>
+    </view>
+
+    <view wx:if="{{cartItems.length > 0}}" class="cart-actions">
+      <view class="btn-primary" bindtap="onOrder">确认下单</view>
+      <view class="btn-secondary" bindtap="onClear">清空</view>
+    </view>
+  </view>
+</view>

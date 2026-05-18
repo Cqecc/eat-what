@@ -1,0 +1,76 @@
+<view class="home-page">
+  <!-- 加载态 -->
+  <view wx:if="{{loadingState}}" class="state-container">
+    <text class="state-text">加载中...</text>
+  </view>
+
+  <!-- 错误态 -->
+  <view wx:elif="{{loadErrorState}}" class="state-container">
+    <text class="state-text">数据加载失败</text>
+    <view class="btn-primary retry-btn" bindtap="retryLoad">重试</view>
+  </view>
+
+  <!-- 正常态 -->
+  <view wx:else>
+    <!-- 餐次提示 + 分类筛选 -->
+    <view class="meal-hint">{{mealHint}}</view>
+    <view class="home-filter">
+      <view wx:for="{{categories}}" wx:key="*this"
+        class="filter-btn {{categoryFilter === item ? 'active' : ''}}"
+        bindtap="onFilterTap" data-value="{{item}}">{{item}}</view>
+      <view class="filter-btn {{categoryFilter === '' ? 'active' : ''}}" bindtap="onFilterTap" data-value="">全部</view>
+    </view>
+
+    <!-- 初始态：推荐按钮 -->
+    <view wx:if="{{pageState === 'initial'}}" class="home-initial">
+      <view class="spin-btn" hover-class="spin-btn-active" bindtap="onSpin">
+        吃什么？
+      </view>
+    </view>
+
+    <!-- spinning动画 -->
+    <view wx:elif="{{pageState === 'spinning'}}" class="home-spinning">
+      <text class="spin-text">正在推荐...</text>
+    </view>
+
+    <!-- 推荐结果 -->
+    <view wx:elif="{{pageState === 'result' || pageState === 'confirmed'}}">
+      <recommend-result
+        result="{{recommendResult}}"
+        phase="{{pageState === 'confirmed' ? 'action' : 'decide'}}"
+        bindanother="onAnother"
+        bindconfirm="onConfirm"
+        bindnotify="onNotify"
+        bindaddmore="onAddMore"
+        bindexclude="onExclude" />
+    </view>
+
+    <!-- 池耗尽提示 -->
+    <view wx:elif="{{pageState === 'exhausted'}}" class="exhausted-state">
+      <text class="exhausted-text">没有更多推荐了，换个分类试试吧</text>
+      <view class="btn-primary" bindtap="onReset">重新选择</view>
+    </view>
+  </view>
+
+  <!-- 购物车浮动图标 -->
+  <cart-float cartCount="{{cartCount}}" bindopen="onCartOpen" />
+
+  <!-- 购物车面板 -->
+  <cart-panel wx:if="{{showCartPanel}}" bindclose="onCartClose" bindorder="onShowOrderConfirm" />
+
+  <!-- 下单确认弹窗 -->
+  <order-confirm wx:if="{{showOrderConfirm}}" bindclose="onOrderConfirmClose" bindordered="onOrdered" />
+
+  <!-- 新用户引导弹窗 -->
+  <init-guide wx:if="{{showInitGuide}}" binddone="onInitDone" bindskip="onInitSkip" bindinvite="onShowInviteTip" />
+
+  <!-- 邀请家人提示 -->
+  <view wx:if="{{showInviteTip}}" class="overlay" bindtap="onInviteTipClose">
+    <view class="invite-tip card" catchtap="">
+      <text class="invite-title">想让家人也收到通知吗？</text>
+      <text class="invite-desc">分享小程序给家人，家人授权后能收到推送提醒</text>
+      <button class="btn-primary invite-share-btn" open-type="share">分享给家人</button>
+      <view class="btn-skip" bindtap="onInviteTipClose">暂时不用</view>
+    </view>
+  </view>
+</view>

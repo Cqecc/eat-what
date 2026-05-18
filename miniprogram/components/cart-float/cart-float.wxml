@@ -1,0 +1,4 @@
+<view wx:if="{{cartCount > 0}}" class="cart-float" bindtap="onTap">
+  <view class="cart-badge">{{cartCount}}</view>
+  <text class="cart-icon">🛒</text>
+</view>

@@ -1,0 +1,72 @@
+.init-guide {
+  width: 85%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.guide-title {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.guide-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 6px;
+}
+
+.guide-dishes {
+  margin-top: 16px;
+}
+
+.guide-dish {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dish-name {
+  font-size: 15px;
+  flex: 1;
+}
+
+.dish-ratings {
+  display: flex;
+  gap: 8px;
+}
+
+.dish-rating-btn {
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  background-color: #f0f0f0;
+  color: var(--color-text-muted);
+}
+
+.active-good {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.active-ok {
+  background-color: #bbb;
+  color: #fff;
+}
+
+.guide-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-skip {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}

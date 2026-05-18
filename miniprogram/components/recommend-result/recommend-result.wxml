@@ -1,0 +1,23 @@
+<view class="recommend-result card">
+  <view class="result-name">{{result.name}}</view>
+  <view class="result-meta">
+    <text>{{result.meal}} · {{result.category}}</text>
+    <text class="tag {{result.rating === '好吃' ? 'tag-good' : 'tag-ok'}}">{{result.rating}}</text>
+  </view>
+  <view wx:if="{{result.photoFileId}}" class="result-photo">
+    <image src="{{result.photoFileId}}" mode="aspectFill" class="result-img" />
+  </view>
+
+  <!-- 决策层按钮 -->
+  <view wx:if="{{phase === 'decide'}}" class="result-actions">
+    <view class="btn-secondary result-btn" bindtap="onAnother">换一个</view>
+    <view class="btn-primary result-btn" bindtap="onConfirm">就吃这个</view>
+  </view>
+
+  <!-- 行动层按钮 -->
+  <view wx:elif="{{phase === 'action'}}" class="result-actions action-buttons">
+    <view class="btn-primary result-btn" bindtap="onNotify">通知家人</view>
+    <view class="btn-secondary result-btn" bindtap="onAddMore">再加一道</view>
+    <view class="btn-danger-text" bindtap="onExclude">不想再推荐</view>
+  </view>
+</view>

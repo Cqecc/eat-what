@@ -1,0 +1,49 @@
+.record-page {
+  min-height: 100vh;
+}
+
+.state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.state-text {
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+.retry-btn {
+  margin-top: 16px;
+  width: 120px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.empty-text {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.record-content {
+  padding: 0 16px;
+}
+
+.record-list {
+  margin-top: 20px;
+}
+
+.list-header {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}

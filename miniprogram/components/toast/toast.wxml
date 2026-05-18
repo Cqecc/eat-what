@@ -1,0 +1,3 @@
+<view wx:if="{{visible}}" class="toast-container">
+  <view class="toast-box {{type}}">{{message}}</view>
+</view>

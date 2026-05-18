@@ -1,0 +1,21 @@
+<view class="overlay" bindtap="onClose">
+  <view class="order-confirm card" catchtap="">
+    <view class="confirm-title">确认下单</view>
+
+    <view class="confirm-items">
+      <view wx:for="{{items}}" wx:key="name" class="confirm-item">
+        <text class="confirm-item-name">{{item.name}}</text>
+        <text class="confirm-item-meta">{{item.meal}} · {{item.category}}</text>
+      </view>
+    </view>
+
+    <view class="confirm-note">
+      <input placeholder="备注（可选）" value="{{note}}" bindinput="onNoteInput" />
+    </view>
+
+    <view class="confirm-actions">
+      <view class="btn-secondary" bindtap="onClose">取消</view>
+      <view class="btn-primary" bindtap="onConfirmOrder">下单</view>
+    </view>
+  </view>
+</view>

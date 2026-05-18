@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "记录",
+  "usingComponents": {
+    "record-form": "/components/record-form/record-form",
+    "record-item": "/components/record-item/record-item",
+    "edit-modal": "/components/edit-modal/edit-modal"
+  }
+}

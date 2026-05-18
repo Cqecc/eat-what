@@ -1,0 +1,16 @@
+<view class="record-item card" bindtap="onTap">
+  <view class="item-header">
+    <text class="item-name">{{record.name}}</text>
+    <text class="tag {{record.rating === '好吃' ? 'tag-good' : 'tag-ok'}}">{{record.rating}}</text>
+  </view>
+
+  <view class="item-meta">
+    <text class="meta-text">{{record.meal}} · {{record.category}}</text>
+  </view>
+
+  <view wx:if="{{record.note}}" class="item-note">{{record.note}}</view>
+
+  <image wx:if="{{record.photoFileId}}" class="item-photo" src="{{record.photoFileId}}" mode="aspectFill" />
+
+  <view wx:if="{{record.excluded}}" class="item-excluded-tag">已排除</view>
+</view>

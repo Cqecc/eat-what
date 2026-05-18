@@ -1,0 +1,21 @@
+<view class="overlay" bindtap="onSkip">
+  <view class="init-guide card" catchtap="">
+    <view class="guide-title">开始记录你的菜谱</view>
+    <view class="guide-desc">选择你喜欢的家常菜，快速开始</view>
+
+    <view class="guide-dishes">
+      <view wx:for="{{dishes}}" wx:key="name" class="guide-dish">
+        <text class="dish-name">{{item.name}}</text>
+        <view class="dish-ratings">
+          <view class="dish-rating-btn {{item.rating === '好吃' ? 'active-good' : ''}}" bindtap="onRatingTap" data-index="{{index}}" data-rating="好吃">好吃</view>
+          <view class="dish-rating-btn {{item.rating === '还行' ? 'active-ok' : ''}}" bindtap="onRatingTap" data-index="{{index}}" data-rating="还行">还行</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="guide-actions">
+      <view class="btn-primary" bindtap="onInit">开始使用</view>
+      <view class="btn-skip" bindtap="onSkip">暂时不用</view>
+    </view>
+  </view>
+</view>

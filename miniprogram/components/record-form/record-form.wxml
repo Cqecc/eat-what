@@ -1,0 +1,44 @@
+<view class="record-form">
+  <view class="form-row">
+    <input class="form-input name-input" placeholder="菜名" value="{{name}}" bindinput="onNameInput" />
+  </view>
+
+  <view class="form-row form-row-group">
+    <view class="form-label">餐次</view>
+    <view class="form-options">
+      <view wx:for="{{meals}}" wx:key="*this" class="option-btn {{meal === item ? 'active' : ''}}" bindtap="onMealTap" data-value="{{item}}">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="form-row form-row-group">
+    <view class="form-label">分类</view>
+    <view class="form-options">
+      <view wx:for="{{categories}}" wx:key="*this" class="option-btn {{category === item ? 'active' : ''}}" bindtap="onCategoryTap" data-value="{{item}}">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="form-row form-row-group">
+    <view class="form-label">评价</view>
+    <view class="form-options">
+      <view wx:for="{{ratings}}" wx:key="*this" class="option-btn rating-btn {{rating === item ? 'active' : ''}} {{item === '好吃' ? 'good' : 'ok'}}" bindtap="onRatingTap" data-value="{{item}}">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="form-row">
+    <input class="form-input" placeholder="备注（可选）" value="{{note}}" bindinput="onNoteInput" />
+  </view>
+
+  <view class="photo-section">
+    <view class="photo-area" bindtap="onChoosePhoto">
+      <image wx:if="{{photoThumb}}" class="photo-thumb" src="{{photoThumb}}" mode="aspectFill" />
+      <view wx:else class="photo-placeholder">
+        <text class="photo-icon">📷</text>
+        <text class="photo-text">拍照记录</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-actions">
+    <view class="btn-primary" bindtap="onSave">保存</view>
+  </view>
+</view>

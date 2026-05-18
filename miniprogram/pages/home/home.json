@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "吃什么",
+  "usingComponents": {
+    "recommend-result": "/components/recommend-result/recommend-result",
+    "cart-float": "/components/cart-float/cart-float",
+    "order-confirm": "/components/order-confirm/order-confirm",
+    "init-guide": "/components/init-guide/init-guide",
+    "toast": "/components/toast/toast"
+  }
+}

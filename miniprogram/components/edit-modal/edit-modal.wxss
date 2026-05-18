@@ -1,0 +1,79 @@
+.edit-modal {
+  width: 85%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.modal-row {
+  margin-bottom: 10px;
+}
+
+.modal-row-group {
+  display: flex;
+  align-items: center;
+}
+
+.modal-label {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  width: 40px;
+}
+
+.modal-options {
+  display: flex;
+  gap: 8px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.modal-btn-save {
+  flex: 2;
+}
+
+.btn-secondary {
+  flex: 1;
+}
+
+.modal-danger-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.btn-danger {
+  color: var(--color-danger);
+  font-size: 13px;
+  text-align: center;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background-color: #ffebee;
+}
+
+.btn-danger-outline {
+  color: var(--color-danger);
+  font-size: 13px;
+  text-align: center;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--color-danger);
+}

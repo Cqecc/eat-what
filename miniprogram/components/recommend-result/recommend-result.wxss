@@ -1,0 +1,55 @@
+.recommend-result {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.result-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.result-meta {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.result-photo {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.result-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+}
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.result-btn {
+  flex: 1;
+  max-width: 160px;
+}
+
+.action-buttons {
+  flex-wrap: wrap;
+}
+
+.btn-danger-text {
+  font-size: 13px;
+  color: var(--color-danger);
+  text-align: center;
+  margin-top: 12px;
+}

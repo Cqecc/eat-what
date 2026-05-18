@@ -1,0 +1,31 @@
+<view class="record-page">
+  <!-- 加载态 -->
+  <view wx:if="{{loadingState}}" class="state-container">
+    <text class="state-text">加载中...</text>
+  </view>
+
+  <!-- 错误态 -->
+  <view wx:elif="{{loadErrorState}}" class="state-container">
+    <text class="state-text">数据加载失败</text>
+    <view class="btn-primary retry-btn" bindtap="retryLoad">重试</view>
+  </view>
+
+  <!-- 正常态 -->
+  <view wx:elif="{{records.length === 0}}" class="empty-state">
+    <text class="empty-text">还没有记录，开始添加吧</text>
+  </view>
+
+  <view wx:else class="record-content">
+    <!-- 添加表单 -->
+    <record-form id="recordForm" bindsaved="onRecordSaved" />
+
+    <!-- 记录列表 -->
+    <view class="record-list">
+      <view class="list-header">我的记录</view>
+      <record-item wx:for="{{records}}" wx:key="_id" record="{{item}}" bindtap="onRecordItemTap" />
+    </view>
+  </view>
+
+  <!-- 编辑弹窗 -->
+  <edit-modal wx:if="{{showEditModal}}" record="{{editRecord}}" bindsaved="onRecordSaved" bindclose="onEditClose" />
+</view>

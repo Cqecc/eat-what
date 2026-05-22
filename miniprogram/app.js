@@ -1,4 +1,5 @@
 const { getCurrentMeal } = require('./utils/mealTime')
+const { CLOUD_ENV_ID } = require('./config/env')
 
 App({
   globalData: {
@@ -18,6 +19,7 @@ App({
       return
     }
     wx.cloud.init({
+      env: CLOUD_ENV_ID,
       traceUser: true
     })
     this.loadData()

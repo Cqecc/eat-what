@@ -1,4 +1,5 @@
-const cloud = require('@wxjs/cloud')
+const cloud = require('wx-server-sdk')
+cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV })
 
 const ORDER_LIMIT = 5
 

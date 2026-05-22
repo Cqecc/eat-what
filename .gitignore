@@ -1,8 +1,12 @@
 # 微信小程序 - 包含 AppID 的真实配置，仅本地使用
 miniprogram/project.config.json
+project.config.json
 
-# 微信开发者工具构建产物
-miniprogram_npm/
+# 微信开发者工具 - 私人配置
+project.private.config.json
+
+# 环境配置（含云开发环境ID）
+miniprogram/config/env.js
 
 # 内部文档
 docs/

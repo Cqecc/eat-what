@@ -4,6 +4,6 @@
   "description": "预置菜品初始化云函数",
   "main": "index.js",
   "dependencies": {
-    "@wxjs/cloud": "latest"
+    "wx-server-sdk": "latest"
   }
 }
